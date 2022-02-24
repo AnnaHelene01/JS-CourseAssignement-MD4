@@ -68,7 +68,7 @@ function validateForm(e) {
     addressMsg.innerHTML += "The address must be at least 25 characters!";
   } 
 
-if (nameMsg.innerHTML === "" && subjectMsg.innerHTML === "" && emailMsg.innerHTML === "" && addressMsg === "") {
+if (nameMsg.innerHTML === "" && subjectMsg.innerHTML === "" && emailMsg.innerHTML === "" && addressMsg.innerHTML === "") {
     console.log("Form is submitted!");
     displayBanner("Form is submitted!", "ok")
     //form.submit(); ///for å submitte skjema 
