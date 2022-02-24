@@ -14,6 +14,17 @@ const subjectMsg = document.querySelector ("span#subjectMsg");
 const emailMsg = document.querySelector ("span#emailMsg");
 const addressMsg = document.querySelector ("span#addressMsg");
 
+
+//Hvis alle felter er validert rett, kan formet bli submitted
+const displayBanner = (message = "No message", className) => { //lager en funksjon med beskjed og klasse
+    let bann = document.createElement("div"); //lager en ny div
+    if (className) bann.classList.add(className);
+    bann.innerHTML = message;
+    let firstNode = document.body.childNodes[0];
+    document.body.insertBefore(bann, firstNode); //plassere først over alt på siden
+  }
+
+
 function validateForm(e) {
   // Forhindre at skjema submitter før det er ferdig
   e.preventDefault();
@@ -56,16 +67,6 @@ function validateForm(e) {
   if (submittedAddress.length < 25) {
     addressMsg.innerHTML += "The address must be at least 25 characters!";
   } 
-
-
-//Hvis alle felter er validert rett, kan formet bli submitted
-displayBanner = (message = "No message", className) => { //lager en funksjon med beskjed og klasse
-  let bann = document.createElement("div"); //lager en ny div
-  if (className) bann.classList.add(className);
-  bann.innerHTML = message;
-  let firstNode = document.body.childNodes[0];
-  document.body.insertBefore(bann, firstNode); //plassere først over alt på siden
-}
 
 if (nameMsg.innerHTML === "" && subjectMsg.innerHTML === "" && emailMsg.innerHTML === "" && addressMsg === "") {
     console.log("Form is submitted!");
