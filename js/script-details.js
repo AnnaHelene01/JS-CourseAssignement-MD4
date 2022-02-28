@@ -32,14 +32,14 @@ const out = document.querySelector("div#listHero");
 function listData(heroes) {
     //console.log(heroes); 
     //Lager html content med hero properties til DETAILS siden.
-    document.title = heroes.name;
+    document.title = heroes.name; //Endrer tittel på siden til hvilken helt det er!
     let newDiv = `
     <h1>${heroes.name}</h1>
     <img src="${heroes.images.sm}" alt="${heroes.name}">
     <p> ID: ${heroes.id} </p>
     <p> Appearance: ${heroes.appearance.gender} </p>
     <p> Full name: ${heroes.biography.fullName}</p>
-    <button type="button"> <a href="index.html"> Go Back </a> </>
+    <button type="button"> <a href="index.html"> Go Back </a> </> 
     `;
     out.innerHTML = newDiv;
     status.innerHTML = "";
